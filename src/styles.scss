@@ -3,6 +3,13 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+p{
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+div{
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
 body {
     background-color: #1C1C1C;

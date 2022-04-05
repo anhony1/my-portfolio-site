@@ -5,6 +5,7 @@ import { PortPageComponent } from './pages/port-page/port-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page/blog-post-page.component';
 
 const routes: Routes = [
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'about', component: AboutPageComponent  },
   { path: 'portfolio', component: PortPageComponent },
   { path: 'blog', component: BlogPageComponent},
-  { path: 'contact', component: ContactPageComponent}
+  { path: 'contact', component: ContactPageComponent},
+  { path: 'blogPost/:id', component: BlogPostPageComponent}
 
 ];
 

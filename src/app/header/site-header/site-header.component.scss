@@ -7,10 +7,9 @@ html, body
 
 header, footer
 {
-    font-family: Raleway;
     margin: 0 auto;
-	padding: 5em 3em;
-	text-align: center;
+	  padding: 5em 3em;
+	  text-align: center;
     background: #555;
 }
 
@@ -34,16 +33,15 @@ footer span
 
 div.container
 {
-    font-family: Raleway;
     margin: 0 auto;
-	text-align: center;
+	  text-align: center;
 }
 
 div.container a
 {
     color: #FFF;
     text-decoration: none;
-    font: 20px Raleway;
+    font-size: 25px;
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;

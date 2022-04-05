@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-8">
+      <h1>
+        {{postTitle}} -> {{postId}}
+      </h1>
+      <h2 class="text-muted">By: Tony</h2>
+      <span class="badge">Posted 2012-08-02 20:47:04</span>
+      <span class="badge">Views: 102,202</span>
+      <span class="badge">Posted 2012-08-02 20:47:04</span>
+      <hr style="background-color:white">
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col-sm-8">
+      <div [innerHTML]="body | marked"></div>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col-sm-8">
+      <hr style="background-color:white">
+      <h3>Comments</h3>
+    </div>
+  </div>
+</div>
+

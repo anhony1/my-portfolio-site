@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Post} from "../../Models/Post";
 
 @Component({
   selector: 'app-blog-page',
@@ -9,37 +10,26 @@ export class BlogPageComponent implements OnInit {
 
   constructor() { }
 
-  post: any[] = [
-    {
-      "name": "Douglas  Pace"
-    },
-    {
-      "name": "Mcleod  Mueller"
-    },
-    {
-      "name": "Day  Meyers"
-    },
-    {
-      "name": "Aguirre  Ellis"
-    },
-    {
-      "name": "Cook  Tyson"
-    },
-    {
-      "name": "Cook  Tyson"
-    },
-    {
-      "name": "Cook  Tyson"
-    },
-    {
-      "name": "Cook  Tyson"
-    }
-  ];
+  blogPosts: Post[] = [];
+
+
 
   ngOnInit(): void {
 
+    this.blogPosts = this.createMockPosts(1,20);
+
   }
 
-
+  createMockPosts(from: number, to: number): Post[] {
+    const returnList: Post[] = [];
+    for(let i = from; i <= to; i++){
+      returnList.push({
+        id: i,
+        title: 'long blogpost title for us to see' + i,
+        author: 'tony'
+      })
+    }
+    return returnList;
+  }
 
 }

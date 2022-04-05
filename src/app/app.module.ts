@@ -11,6 +11,8 @@ import { PortPageComponent } from './pages/port-page/port-page.component';
 import { BlogPageComponent } from './pages/blog-page/blog-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { BlogItemComponent } from './pages/blog-page/blog-item/blog-item.component';
+import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page/blog-post-page.component';
+import { MarkedPipe } from './pipes/marked/marked.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BlogItemComponent } from './pages/blog-page/blog-item/blog-item.compone
     PortPageComponent,
     BlogPageComponent,
     ContactPageComponent,
-    BlogItemComponent
+    BlogItemComponent,
+    BlogPostPageComponent,
+    MarkedPipe
   ],
   imports: [
     BrowserModule,
