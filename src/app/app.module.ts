@@ -13,6 +13,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { BlogItemComponent } from './pages/blog-page/blog-item/blog-item.component';
 import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page/blog-post-page.component';
 import { MarkedPipe } from './pipes/marked/marked.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MarkedPipe } from './pipes/marked/marked.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

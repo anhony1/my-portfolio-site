@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Post} from "../../Models/Post";
+import {Observable} from "rxjs";
+import {PostService} from "../../service/post-service/post.service";
 
 @Component({
   selector: 'app-blog-page',
@@ -8,15 +10,14 @@ import {Post} from "../../Models/Post";
 })
 export class BlogPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   blogPosts: Post[] = [];
 
-
-
   ngOnInit(): void {
 
-    this.blogPosts = this.createMockPosts(1,20);
+    // this.blogPosts = this.createMockPosts(1,20);
+    this.getPostData();
 
   }
 
@@ -30,6 +31,13 @@ export class BlogPageComponent implements OnInit {
       })
     }
     return returnList;
+  }
+
+  getPostData(){
+    this.postService.getAllPosts().subscribe(result => {
+      console.log("result", result);
+      this.blogPosts = result;
+    })
   }
 
 }
