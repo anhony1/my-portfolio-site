@@ -1,5 +1,37 @@
 <div class="container mt-5 p-5">
 
     <h1 class="display-1">Portfolio</h1>
-    
+
+<!--    <div class="custom-file">-->
+<!--      <input type="file" class="custom-file-input" id="customFile" (change)="onFileChanged($event)">-->
+<!--      <label class="custom-file-label" for="customFile">Test</label>-->
+<!--    </div>-->
+
+<!--  <label for="file">File:</label>-->
+<!--  <input type="file" id="file" (change)="upload($event)" accept=".png,.jpg" />-->
+<!--  <button (click)="uploadImage()">Upload Image</button>-->
+
+</div>
+
+
+<div class="container">
+  <div>
+    <h4 align="center" style="color: #fff">{{ title }}</h4>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <app-upload-form></app-upload-form>
+    </div>
+
+    <div class="col-6">
+      <app-upload-list></app-upload-list>
+    </div>
+  </div>
+
+  <div>
+    <img src="https://firebasestorage.googleapis.com/v0/b/blogsite-a40dc.appspot.com/o/uploads%2F1KBlXiY.jpg?alt=media&token=aaa5699a-afc6-4e7a-9cd4-cc0998e75852" alt="test" style="width:50%;height: 50%;">
+  </div>
+
+
 </div>

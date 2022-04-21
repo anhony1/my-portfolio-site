@@ -10,11 +10,16 @@ export class PostService {
 
   constructor(private httpClient: HttpClient) { }
 
-  apiUrlBase = 'http://localhost:4200/api/posts/'
+  apiUrlBase = 'http://localhost:4200/api/posts'
 
   public getAllPosts(): Observable<Post[]>{
     const apiUrl = `${this.apiUrlBase}/allPosts`;
     return this.httpClient.get<Post[]>(apiUrl);
+  }
+
+  public getPostById(id: number): Observable<Post>{
+    const apiUrl = `${this.apiUrlBase}/post/${id}`;
+    return this.httpClient.get<Post>(apiUrl);
   }
 
   public createPost(post: Post){

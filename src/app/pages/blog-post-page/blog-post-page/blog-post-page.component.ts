@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {PostService} from "../../../service/post-service/post.service";
+import {Post} from "../../../Models/Post";
 
 @Component({
   selector: 'app-blog-post-page',
@@ -9,18 +11,18 @@ import {ActivatedRoute} from "@angular/router";
 export class BlogPostPageComponent implements OnInit {
 
   postId: number | undefined;
-  postTitle: string | undefined;
-  body: string | undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  post: Post | undefined;
+
+  constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit(): void {
 
-    this.postTitle = 'Test Title';
-
     this.postId = +this.route.snapshot.params['id'];
 
-    this.body = "test";
+    this.postService.getPostById(this.postId).subscribe(result => {
+      this.post = result;
+    });
 
   }
 

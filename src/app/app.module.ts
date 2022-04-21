@@ -14,6 +14,20 @@ import { BlogItemComponent } from './pages/blog-page/blog-item/blog-item.compone
 import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page/blog-post-page.component';
 import { MarkedPipe } from './pipes/marked/marked.pipe';
 import {HttpClientModule} from "@angular/common/http";
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {UploadFormComponent} from "./components/upload-form/upload-form.component";
+import {UploadListComponent} from "./components/upload-list/upload-list.component";
 
 @NgModule({
   declarations: [
@@ -26,13 +40,27 @@ import {HttpClientModule} from "@angular/common/http";
     ContactPageComponent,
     BlogItemComponent,
     BlogPostPageComponent,
-    MarkedPipe
+    MarkedPipe,
+    AdminPageComponent,
+    ErrorPageComponent,
+    UploadFormComponent,
+    UploadListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

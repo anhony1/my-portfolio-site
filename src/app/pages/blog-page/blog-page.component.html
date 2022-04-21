@@ -2,13 +2,15 @@
   <div class="row justify-content-sm-center">
     <div class="col-sm-8">
       <h1 class="display-1">Blog</h1>
+      <button type="button" class="btn btn-outline-success btn-lg" (click)="navigateToAdmin()">Create Post</button>
     </div>
+
     <div class="col-sm-8">
         <div *ngFor="let post of blogPosts">
           <h3 class="mt-5"><a [routerLink]="['/blogPost', post.id]">{{post.title}}</a></h3>
-          <h4 class="mt-2">Author: {{post.author}}</h4>
+          <h4 class="mt-2">Author: {{post.createBy}}</h4>
           <div>
-            <span class="badge">Posted 2012-08-02 20:47:04</span>
+            <span class="badge">Posted: {{post.dateCreated}}</span>
           </div>
         </div>
     </div>

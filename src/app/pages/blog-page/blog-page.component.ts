@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Post} from "../../Models/Post";
 import {Observable} from "rxjs";
 import {PostService} from "../../service/post-service/post.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-blog-page',
@@ -10,7 +11,7 @@ import {PostService} from "../../service/post-service/post.service";
 })
 export class BlogPageComponent implements OnInit {
 
-  constructor(private postService: PostService) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   blogPosts: Post[] = [];
 
@@ -21,17 +22,18 @@ export class BlogPageComponent implements OnInit {
 
   }
 
-  createMockPosts(from: number, to: number): Post[] {
-    const returnList: Post[] = [];
-    for(let i = from; i <= to; i++){
-      returnList.push({
-        id: i,
-        title: 'long blogpost title for us to see' + i,
-        author: 'tony'
-      })
-    }
-    return returnList;
-  }
+  // createMockPosts(from: number, to: number): Post[] {
+  //   const returnList: Post[] = [];
+  //   for(let i = from; i <= to; i++){
+  //     returnList.push({
+  //       id: i,
+  //       dateCreated: new Date(), textBody: "", viewCount: 0,
+  //       title: 'long blogpost title for us to see' + i,
+  //       user: 'tony'
+  //     })
+  //   }
+  //   return returnList;
+  // }
 
   getPostData(){
     this.postService.getAllPosts().subscribe(result => {
@@ -40,4 +42,10 @@ export class BlogPageComponent implements OnInit {
     })
   }
 
+  navigateToAdmin() {
+
+    this.router.navigate(['/admin']);
+
+
+  }
 }

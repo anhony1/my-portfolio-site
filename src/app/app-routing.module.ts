@@ -6,6 +6,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogPostPageComponent } from './pages/blog-post-page/blog-post-page/blog-post-page.component';
+import {AdminPageComponent} from "./pages/admin-page/admin-page.component";
+import {ErrorPageComponent} from "./pages/error-page/error-page.component";
 
 const routes: Routes = [
 
@@ -14,7 +16,9 @@ const routes: Routes = [
   { path: 'portfolio', component: PortPageComponent },
   { path: 'blog', component: BlogPageComponent},
   { path: 'contact', component: ContactPageComponent},
-  { path: 'blogPost/:id', component: BlogPostPageComponent}
+  { path: 'blogPost/:id', component: BlogPostPageComponent},
+  { path: 'admin', component: AdminPageComponent},
+  { path: '**', component: ErrorPageComponent}
 
 ];
 
